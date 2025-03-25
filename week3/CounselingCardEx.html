@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>상담카드</title>
+</head>
+
+<body>
+    <h2 style="text-align: center;">상담카드</h2>
+    <form>
+        <table border="1" width="100%" cellpadding="5">
+            <tr>
+                <td>좌우명</td>
+                <td colspan="3"><input type="text" name="motto" size="70"></td>
+            </tr>
+            <tr>
+                <td>학번</td>
+                <td><input type="number" name="student_id"></td>
+                <td>이름</td>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td>주민<br>번호</td>
+                <td><input type="text" name="ssn1" size="10" maxlength="6"> - <input type="password" name="ssn2"
+                        size="10" maxlength="7"></td>
+                <td>메일<br>주소</td>
+                <td><input type="email" name="email"></td>
+            </tr>
+            <tr>
+                <td>상담<br>희망일</td>
+                <td><input type="date" name="date"></td>
+                <td>연락처</td>
+                <td>
+                    <select name=" phone1">
+                        <option value="010">010</option>
+                        <option value="011">011</option>
+                        <option value="016">016</option>
+                    </select>
+                    - <input type="text" name="phone2" size="4" maxlength="4">
+                    - <input type="text" name="phone3" size="4" maxlength="4">
+                </td>
+            </tr>
+            <tr>
+                <td>희망 진로</td>
+                <td colspan="3">
+                    <input type="radio" name="career" value="대학원"> 대학원
+                    <input type="radio" name="career" value="대기업"> 대기업
+                    <input type="radio" name="career" value="창업"> 창업
+                    <input type="radio" name="career" value="유학"> 유학
+                </td>
+            </tr>
+            <tr>
+                <td>학습량<br>(0~24시간)</td>
+                <td colspan="3"><input type="number" name="study_hours" min="0" max="24"> 시간
+                    <br>집중 정도(0~10)
+                    : 0 <input type="range" name="focus_level" min="0" max="10" step="1"> 10
+                    <datalist id="focus_level">
+                        <option value="2" label="Low">
+                        <option value="5" label="Medium">
+                        <option value="8" label="High">
+                    </datalist>
+                </td>
+            </tr>
+            <tr>
+                <td>상담 희망<br>목록</td>
+                <td colspan="3"><textarea name="counsel_wish" rows="3" cols="70" placeholder="유무선네트워킹"></textarea></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
