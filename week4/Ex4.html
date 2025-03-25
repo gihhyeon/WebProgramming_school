@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Most Visited Pages</title>
+    <style>
+        h2 {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 3rem;
+            color: #f8d030;
+            text-shadow: 2px 2px 8px rgba(90, 50, 200, 0.8),
+                0 0 15px rgba(255, 255, 255, 0.3);
+        }
+
+        .image-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .image-container img {
+            width: 200px;
+            height: 150px;
+            border-radius: 10px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .image-container img:hover {
+            box-shadow: 0 0 10px rgba(150, 100, 255, 0.8);
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Most Visited Pages</h2>
+    <hr>
+    <div class="image-container">
+        <a href="https://www.naver.com/">
+            <img src="naver.png" alt="Naver">
+        </a>
+        <a href="https://www.google.com/">
+            <img src="google.png" alt="Google">
+        </a>
+        <a href="https://www.amazon.com/">
+            <img src="amazon.png" alt="Amazon">
+        </a>
+
+    </div>
+</body>
+
+</html>

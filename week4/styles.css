@@ -1,0 +1,36 @@
+body {
+    background-color: aliceblue;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    font-family: 휴먼편지체;
+    font-size: 1em;
+    text-indent: 1em;
+}
+
+h1 {
+    color: brown;
+    text-align: center;
+}
+
+hr {
+    border: 1px solid black;
+}
+
+h2 {
+    color: blue;
+    text-shadow: 2px 2px skyblue;
+}
+
+ul {
+    color: blue;
+    width: 1000px;
+    height: 76px;
+    border: 1px dotted black;
+}
+
+.content {
+    margin: 1em;
+    line-height: 1.6;
+}

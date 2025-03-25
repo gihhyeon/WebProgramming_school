@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서 구조화</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #wrapper {
+            width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            height: 120px;
+            background: blue;
+            color: white;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        header p {
+            margin: 10px 0 0;
+        }
+
+        nav {
+            background: lightblue;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: black;
+        }
+
+        main {
+            display: flex;
+        }
+
+        article {
+            width: 400px;
+            background: #E0E0E0;
+            padding: 20px;
+        }
+
+        article h3 {
+            margin-top: 0;
+        }
+
+        aside {
+            width: 200px;
+            background: #666;
+            color: white;
+            padding: 20px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #999;
+            margin: 15px 0;
+        }
+
+        footer {
+            background: teal;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>header</h1>
+        <p>header의 두 번째 제목입니다.</p>
+    </header>
+
+    <nav>
+        <a href="#">메뉴 1</a>
+        <a href="#">메뉴 2</a>
+        <a href="#">메뉴 3</a>
+        <a href="#">메뉴 4</a>
+        <a href="#">메뉴 5</a>
+    </nav>
+
+    <main>
+        <article>
+            <h3>article 1</h3>
+            <p>article 1의 본문입니다.</p>
+            <hr>
+            <h3>article 2</h3>
+            <p>article 2의 본문입니다.</p>
+        </article>
+
+        <aside>
+            <h3>aside</h3>
+            <p>aside의 본문입니다.</p>
+        </aside>
+    </main>
+
+    <footer>
+        footer
+    </footer>
+</body>
+
+</html>

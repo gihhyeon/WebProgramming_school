@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문서 구조화</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        header {
+            background-color: blue;
+            color: white;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 14px;
+        }
+
+        nav {
+            background-color: lightblue;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            margin-top: -5px;
+            margin-left: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: black;
+        }
+
+        main {
+            display: flex;
+            height: calc(100vh - 260px);
+        }
+
+        article {
+            width: 400px;
+            background-color: #ccc;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-item {
+            background-color: #f0f0f0;
+            margin: 10px 0;
+            padding: 15px;
+            flex-grow: 1;
+        }
+
+        aside {
+            width: 200px;
+            background-color: #666;
+            color: white;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: teal;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>header</h1>
+        <p>header의 두 번째 제목입니다.</p>
+    </header>
+
+    <nav>
+        <a href="#">메뉴 1</a>
+        <a href="#">메뉴 2</a>
+        <a href="#">메뉴 3</a>
+        <a href="#">메뉴 4</a>
+        <a href="#">메뉴 5</a>
+    </nav>
+
+    <main>
+        <article>
+            <div class="article-item">
+                <h2>article 1</h2>
+                <p>article 1의 본문입니다.</p>
+            </div>
+            <hr>
+            <div class="article-item">
+                <h2>article 2</h2>
+                <p>article 2의 본문입니다.</p>
+            </div>
+        </article>
+        <aside>
+            <h2>aside</h2>
+            <p>aside의 본문입니다.</p>
+        </aside>
+    </main>
+
+    <footer>
+        footer
+    </footer>
+</body>
+
+</html>
