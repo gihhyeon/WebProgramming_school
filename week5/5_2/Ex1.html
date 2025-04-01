@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div Animation</title>
+    <style>
+        body {
+            height: 100vh;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            background-color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: black;
+            animation: moveAndChange 5s linear infinite;
+        }
+
+        @keyframes moveAndChange {
+            0% {
+                top: 10%;
+                left: 10%;
+                background-color: red;
+            }
+
+            25% {
+                top: 10%;
+                left: 80%;
+                background-color: yellow;
+            }
+
+            50% {
+                top: 80%;
+                left: 80%;
+                background-color: blue;
+            }
+
+            75% {
+                top: 80%;
+                left: 10%;
+                background-color: green;
+            }
+
+            100% {
+                top: 10%;
+                left: 10%;
+                background-color: red;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">Animation</div>
+</body>
+
+</html>

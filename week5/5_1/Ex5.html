@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션 응용</title>
+    <style>
+        img {
+            width: 50px;
+            height: auto;
+        }
+
+        @keyframes ani {
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(0%);
+            }
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            animation-name: ani;
+            animation-duration: 2s;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>애니메이션 응용</h3>
+    <hr>
+    <div><img src="question.jpg" alt="image">질문 있습니다.</div>
+</body>
+
+</html>
