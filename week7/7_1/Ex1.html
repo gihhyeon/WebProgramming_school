@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>난수</title>
+</head>
+
+<body>
+    <h3>난수 10개 생성</h3>
+    <hr>
+    <script>
+        var numbers = [];
+        for (var i = 0; i < 10; i++) {
+            var rand = Math.floor(Math.random() * 100) + 1;
+            numbers.push(rand);
+        }
+        document.write(numbers.join(" "));
+        document.write("<hr>");
+
+        var max = Math.max.apply(null, numbers);
+        document.write("제일 큰 수는 " + max);
+        document.write("<hr>");
+
+        numbers.sort(function (a, b) {
+            if (a > b) return 1;
+            if (a === b) return 0;
+            if (a < b) return -1;
+        });
+        document.write(numbers.join(" "));
+    </script>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 이거 시험 나올듯????-->
