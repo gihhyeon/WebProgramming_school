@@ -1,0 +1,31 @@
+body {
+    background-color: aclidblue;
+
+}
+
+h1 {
+    text-align: center;
+    color: brown;
+}
+
+header {
+    font-family: '휴먼편지체';
+    font-size: 1em;
+    text-indent: 1em;
+}
+
+hr {
+    border: 1px solid black;
+}
+
+ul {
+    color: blue;
+    width: 1000px;
+    height: 76px;
+    border: 1px dotted black;
+}
+
+h2 {
+    color: blue;
+    text-shadow: 2px 2px skyblue;
+}
