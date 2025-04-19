@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표 그리기</title>
+</head>
+
+<body>
+    <script>
+        var row = prompt("행을 입력하세요")
+        var col = prompt("열을 입력하세요")
+
+        document.write("<table border='1' cellpadding='10'>");
+
+        for (var i = 0; i < row; i++) {
+            document.write("<tr>");
+            for (var j = 0; j < col; j++) {
+                document.write("<td></td>");
+            }
+            document.write("</tr>");
+        }
+
+        document.write("</table>");
+
+    </script>
+
+</body>
+
+</html>
