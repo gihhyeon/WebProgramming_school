@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼 스타일 주기</title>
+    <style>
+        input[type="text"] {
+            color: red;
+        }
+
+        input:hover,
+        textarea:hover {
+            background-color: aliceblue;
+        }
+
+        label {
+            display: block;
+            padding: 5px;
+        }
+
+        label span {
+            display: inline-block;
+            width: 100px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>CONTACT US</h3>
+    <hr>
+    <form>
+        <label>
+            <span>name </span><input type="text" placeholder="Elvis">
+        </label>
+        <label>
+            <span>email </span><input type="email" placeholder="elvis@grdaf.com"">
+        </label>
+        <label>
+            <span>comment</span> <textarea placeholder=" Hello"></textarea>
+        </label>
+    </form>
+
+</body>
+
+</html>
