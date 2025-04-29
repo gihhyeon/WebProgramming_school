@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[]로 배열 만들기</title>
+</head>
+
+<body>
+    <h3>[]로 배열 만들기</h3>
+    <hr>
+    <script>
+        var ploats = [20, 12, 3, 14, 5];
+
+        document.write(ploats + "<br>");
+
+        for (var i = 0; i < ploats.length; i++) {
+            var size = ploats[i];
+            while (size > 0) {
+                document.write("*");
+                size--;
+            }
+            document.write(ploats[i] + "<br>");
+        }
+    </script>
+
+</body>
+
+</html>

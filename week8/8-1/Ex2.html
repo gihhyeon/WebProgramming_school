@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산해봅시다</title>
+</head>
+
+<body>
+    <h3>계산해봅시다.</h3>
+    <hr>
+
+    <script>
+        // 랜덤한 1~100 정수 생성 함수
+        function randomNum() {
+            return Math.floor(Math.random() * 100) + 1;
+        }
+
+        // 랜덤 숫자 6개 뽑기
+        var a = randomNum();
+        var b = randomNum();
+        var c = randomNum();
+        var d = randomNum();
+        var e = randomNum();
+        var f = randomNum();
+        var g = randomNum();
+        var h = randomNum();
+        var i = randomNum();
+    </script>
+
+    <p>
+        <script>document.write(a + " + " + b + " = ");</script>
+        <span onclick="this.innerHTML = (a + b)">답</span>
+    </p>
+
+    <p>
+        <script>document.write(c + " * " + d + " + " + e + " = ");</script>
+        <span onclick="this.innerHTML = (c * d + e)">답</span>
+    </p>
+
+    <p>
+        <script>document.write(f + " / " + g + " - " + h + " * " + i + " = ");</script>
+        <span onclick="this.innerHTML = (f / g - h * i)">답</span>
+    </p>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>피라미드 별 찍기</title>
+    <style>
+        #box {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 200px;
+            background-color: skyblue;
+            border-radius: 10px;
+            padding: 10px;
+            font-family: monospace;
+            text-align: center;
+            white-space: pre;
+        }
+
+        #error {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            background-color: skyblue;
+            border-radius: 10px;
+            padding: 10px;
+            font-family: sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>피라미드 별 찍기</h3>
+
+    <script>
+        var line = prompt("1 이상 20 이하의 정수를 입력하세요:");
+
+        if (line === null) {
+            document.write("입력이 취소되었습니다.");
+        } else {
+            line = parseInt(line);
+
+            if (isNaN(line) || line < 1 || line > 20) {
+                document.write('<div id="error">잘못된 입력입니다. 1 이상 20 이하의 정수를 입력해야 합니다.</div>');
+            } else {
+                var content = "";
+                for (var i = 1; i <= line; i++) {
+                    content += "A".repeat(2 * i - 1) + "\n";
+                }
+
+                document.write('<div id="box">' + content.replace(/\n/g, '<br>') + '</div>');
+            }
+        }
+    </script>
+</body>
+
+</html>

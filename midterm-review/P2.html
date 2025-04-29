@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>카드 그룹 회전</title>
+    <style>
+        #group1,
+        #group2 {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+            margin: 20px;
+        }
+
+        #group1 img,
+        #group2 img {
+            position: absolute;
+            transition: all 5s ease;
+        }
+
+        #spadeA {
+            left: 0px;
+            top: 20px;
+            z-index: 1;
+        }
+
+        #spade2 {
+            left: 30px;
+            top: 30px;
+            z-index: 2;
+        }
+
+        #spade3 {
+            left: 0px;
+            top: 20px;
+            z-index: 3;
+        }
+
+        #spade7 {
+            left: 30px;
+            top: 30px;
+            z-index: 4;
+        }
+
+        /* hover 시 그룹에 효과 적용 */
+        #group1:hover img {
+            transform: rotate(360deg);
+            border: 5px solid magenta;
+            box-shadow: 0px 0px 20px magenta;
+        }
+
+        #group2:hover img {
+            transform: rotate(360deg);
+            border: 5px solid magenta;
+            box-shadow: 0px 0px 20px magenta;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>카드 그룹 회전</h3>
+    <hr>
+
+    <div id="group1">
+        <img id="spadeA" src="spade-A.png" width="100" height="140">
+        <img id="spade2" src="spade-2.png" width="100" height="140">
+    </div>
+
+    <div id="group2">
+        <img id="spade3" src="spade-3.png" width="100" height="140">
+        <img id="spade7" src="spade-7.png" width="100" height="140">
+    </div>
+
+</body>
+
+</html>

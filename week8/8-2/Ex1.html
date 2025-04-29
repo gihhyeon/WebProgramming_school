@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z-index 스타일 프로퍼티</title>
+    <style>
+        div {
+            position: absolute;
+        }
+
+        img {
+            position: absolute;
+            width: 100px;
+            height: 140px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>z-index 스타일 프로퍼티</h3>
+    <hr>
+    <div>
+        <img src="joker.png" alt="조커">
+        <img src="spade-j.png" alt="">
+        <img src="spade-k.png" alt="">
+        <img src="spade-q.png" alt="">
+    </div>
+    <script>
+        var imgArray = document.getElementsByTagName("img");
+        for (i = 0; i < imgArray.length; i++) {
+            var obj = imgArray[i];
+            obj.style.zIndex = i;
+
+            obj.onclick = shuffle;
+        }
+
+        function shuffle() {
+            for (i = 0; i < imgArray.length; i++) {
+                var obj = imgArray[i];
+                obj.style.zIndex++;
+                obj.style.zIndex %= imgArray.length; // z-index가 카드 수를 넘으면 0으로 돌아감
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

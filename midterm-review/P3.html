@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>숫자 짝 맞추기</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            width: 80px;
+            height: 80px;
+            text-align: center;
+            font-size: 24px;
+            border: 1px solid #ccc;
+            color: transparent;
+            transition: color 0.5s;
+        }
+
+        td:hover {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        function shuffle(array) {
+            for (var i = array.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+
+        var rows, cols;
+        while (true) {
+            rows = parseInt(prompt("행을 입력하세요 (2~20)"));
+            cols = parseInt(prompt("열을 입력하세요 (2~20)"));
+            if (!isNaN(rows) && !isNaN(cols) && (rows * cols) % 2 === 0) {
+                break;
+            }
+            alert("행 × 열은 짝수여야 합니다. 다시 입력하세요.");
+        }
+
+        var size = rows * cols;
+        var numbers = [];
+        for (var i = 0; i < size / 2; i++) {
+            numbers.push(i);
+            numbers.push(i);
+        }
+
+        shuffle(numbers);
+
+        // 숫자별로 색을 랜덤하게 지정
+        var colors = {};
+        for (var i = 0; i < size / 2; i++) {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            colors[i] = `rgb(${r}, ${g}, ${b})`;
+        }
+
+        var idx = 0;
+        document.write("<table>");
+        for (var i = 0; i < rows; i++) {
+            document.write("<tr>");
+            for (var j = 0; j < cols; j++) {
+                var num = numbers[idx];
+                document.write("<td style='background-color:" + colors[num] + ";'>" + num + "</td>");
+                idx++;
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+    </script>
+
+</body>
+
+</html>

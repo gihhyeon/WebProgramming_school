@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>정답의 동적 삽입</title>
+    <script>
+        function addAnswerOnce(button, text) {
+            var parentDiv = button.parentElement;
+            var existingAnswer = parentDiv.querySelector(".answer");
+
+            // 정답이 이미 있으면 아무 것도 하지 않음
+            if (existingAnswer) return;
+
+            // 새 정답 추가
+            var newP = document.createElement("p");
+            newP.className = "answer";
+            newP.innerHTML = text;
+
+            // 클릭하면 자기 자신을 삭제
+            newP.addEventListener("click", function () {
+                this.parentElement.removeChild(this);
+            });
+
+            parentDiv.appendChild(newP);
+        }
+    </script>
+</head>
+
+<body>
+    <h3>정답의 동적 삽입</h3>
+    <hr />
+
+    <div>
+        <p>Q1. What is the learning technique that intelligent agents ought to take actions in an environment in order
+            to maximize the notion of cumulative reward?</p>
+        <button onclick="addAnswerOnce(this, 'Reinforcement Learning')">A1.</button>
+    </div>
+
+    <div>
+        <p>Q2. What is the learning technique that maps an input to an output based on example input-output pairs? (It
+            infers a function from labeled training data consisting of a set of training examples.)</p>
+        <button onclick="addAnswerOnce(this, 'Supervised Learning')">A2.</button>
+    </div>
+
+    <div>
+        <p>Q3. What is the learning technique that learns patterns from untagged data? (Contrast to the supervised
+            learning, it exhibits self-organization that captures patterns as probability densities or a combination of
+            neural feature preferences.)</p>
+        <button onclick="addAnswerOnce(this, 'Unsupervised Learning')">A3.</button>
+    </div>
+</body>
+
+</html>
