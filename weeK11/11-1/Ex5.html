@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>산수 문제 자동 채점</title>
+    <style>
+        .line-through {
+            text-decoration: line-through;
+        }
+
+        input {
+            width: 50px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3><b>산수 문제를 풀어 봅시다.</b></h3>
+    <p>
+        문제는 자동으로 생성되며, 10초가 지나면 자동 채점됩니다. <br>
+        남은 시간 <span id="time">10</span>
+    </p>
+
+    <form id="quizForm">
+        <div id="problems"></div>
+        <br>
+        <input type="button" value="다시" onclick="generateProblems()" />
+        <span id="score">0</span>
+    </form>
+
+    <script>
+        const numProblems = 4;
+        const operators = ["+", "-", "*", "/"];
+        let problemData = [];
+        let countdown = 10;
+        let timerId = null;
+
+        function randomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function generateProblems() {
+            clearInterval(timerId);
+            countdown = 10;
+            document.getElementById("time").textContent = countdown;
+            document.getElementById("score").textContent = "0";
+
+            const container = document.getElementById("problems");
+            container.innerHTML = "";
+            problemData = [];
+
+            for (let i = 0; i < numProblems; i++) {
+                const a = randomInt(1, 20);
+                const b = randomInt(1, 20);
+                const op = operators[randomInt(0, 3)];
+
+                let question = `${a} ${op} ${b}`;
+                let answer;
+                switch (op) {
+                    case "+": answer = a + b; break;
+                    case "-": answer = a - b; break;
+                    case "*": answer = a * b; break;
+                    case "/": answer = Math.floor(a / b); break;
+                }
+
+                problemData.push({ question, answer });
+
+                const p = document.createElement("p");
+                const span = document.createElement("span");
+                span.textContent = question;
+                span.id = `q${i}`;
+
+                const input = document.createElement("input");
+                input.type = "text";
+                input.id = `a${i}`;
+
+                p.appendChild(span);
+                p.appendChild(input);
+                container.appendChild(p);
+            }
+
+            // 타이머 시작
+            timerId = setInterval(() => {
+                countdown--;
+                document.getElementById("time").textContent = countdown;
+                if (countdown === 0) {
+                    clearInterval(timerId);
+                    checkAnswers();
+                }
+            }, 1000);
+        }
+
+        function checkAnswers() {
+            let correct = 0;
+            for (let i = 0; i < problemData.length; i++) {
+                const input = document.getElementById(`a${i}`);
+                const span = document.getElementById(`q${i}`);
+                const userAnswer = parseInt(input.value);
+                const expected = problemData[i].answer;
+
+                if (userAnswer === expected) {
+                    span.classList.remove("line-through");
+                    correct++;
+                } else {
+                    span.classList.add("line-through");
+                }
+            }
+            document.getElementById("score").textContent = correct;
+        }
+
+        window.onload = generateProblems;
+    </script>
+</body>
+
+</html>
