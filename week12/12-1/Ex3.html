@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>폼으로 사각형 그리기</title>
+    <style>
+        td {
+            text-align: right;
+            padding: 5px;
+        }
+
+        canvas {
+            margin-top: 10px;
+            background-color: aliceblue;
+        }
+    </style>
+    <script>
+        function draw() {
+            var canvas = document.getElementById("myCanvas");
+            var context = canvas.getContext("2d");
+
+            var x = parseInt(document.getElementById("x").value);
+            var y = parseInt(document.getElementById("y").value);
+            var width = parseInt(document.getElementById("width").value);
+            var height = parseInt(document.getElementById("height").value);
+            var lineWidth = parseInt(document.getElementById("lineWidth").value);
+            var strokeStyle = document.getElementById("strokeStyle").value;
+
+            var halfLineWidth = lineWidth / 2;
+
+            if (
+                x - halfLineWidth < 0 ||
+                y - halfLineWidth < 0 ||
+                x + width + halfLineWidth > canvas.width ||
+                y + height + halfLineWidth > canvas.height
+            ) {
+                alert("사각형이 캔버스를 벗어납니다. 값을 다시 입력해주세요.");
+                return;
+            }
+
+            context.beginPath();
+            context.lineWidth = lineWidth;
+            context.strokeStyle = strokeStyle;
+            context.rect(x, y, width, height);
+            context.stroke();
+        }
+
+        function erase() {
+            var canvas = document.getElementById("myCanvas");
+            var context = canvas.getContext("2d");
+            context.clearRect(0, 0, canvas.width, canvas.height);
+        }
+    </script>
+</head>
+
+<body>
+    <h3>폼으로 사각형 그리기</h3>
+    <hr>
+
+    <form>
+        <table>
+            <tr>
+                <td>x</td>
+                <td><input id="x" type="number" value="10"></td>
+                <td>y</td>
+                <td><input id="y" type="number" value="10"></td>
+            </tr>
+            <tr>
+                <td>width</td>
+                <td><input id="width" type="number" value="100"></td>
+                <td>height</td>
+                <td><input id="height" type="number" value="100"></td>
+            </tr>
+            <tr>
+                <td>선굵기</td>
+                <td><input id="lineWidth" type="number" value="3"></td>
+                <td colspan="2">
+                    <label for="strokeStyle">선색</label>
+                    <input id="strokeStyle" type="color" value="#ff0000">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="button" onclick="draw()">그리기</button></td>
+                <td colspan="2"><button type="button" onclick="erase()">지우기</button></td>
+            </tr>
+        </table>
+    </form>
+
+    <canvas id="myCanvas" width="500" height="300"></canvas>
+</body>
+
+</html>

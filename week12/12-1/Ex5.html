@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>캔버스에 마우스 드래깅으로 그림 그리기</title>
+</head>
+
+<body>
+    <h3>마우스를 누른 채 드래깅하여 그림을 그려 보세요</h3>
+    <hr>
+
+
+    <canvas id="myCanvas" width="600" height="300" style="background-color:aliceblue; margin-top:10px;"></canvas>
+
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+
+        let drawing = false;
+        let prevX = 0, prevY = 0;
+
+        // 이벤트 등록
+        canvas.addEventListener("mousedown", (e) => {
+            drawing = true;
+            const { offsetX, offsetY } = e;
+            prevX = offsetX;
+            prevY = offsetY;
+        });
+
+        canvas.addEventListener("mousemove", (e) => {
+            if (!drawing) return;
+            const { offsetX, offsetY } = e;
+
+            ctx.lineWidth = parseInt(document.getElementById("lineWidth").value);
+            ctx.strokeStyle = document.getElementById("strokeColor").value;
+
+            ctx.beginPath();
+            ctx.moveTo(prevX, prevY);
+            ctx.lineTo(offsetX, offsetY);
+            ctx.stroke();
+
+            prevX = offsetX;
+            prevY = offsetY;
+        });
+
+        canvas.addEventListener("mouseup", () => {
+            drawing = false;
+        });
+
+        canvas.addEventListener("mouseleave", () => {
+            drawing = false;
+        });
+    </script>
+
+    <div>
+        선굵기 : <input type="number" id="lineWidth" value="3" style="width:50px">
+        선 색 : <input type="color" id="strokeColor" value="#0000ff">
+    </div>
+</body>
+
+</html>
